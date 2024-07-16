@@ -1,0 +1,95 @@
+<body> 
+
+<div class="container">
+
+  <h1 class="title" style="color: rgb(15, 17, 29);">Employee Management System</h1>
+
+  <!-- Button to show add employee form -->
+  <button  (click)="showAddEmployeeForm()" style="margin: 10px;border-radius: 10cm;height: 40px;background-color: rgb(207, 205, 246);">Add Employee</button>
+
+  <button style="border-radius: 10cm;background-color: bisque;height: 40px;"   (click)="sortByName()">Sort by Name</button>
+  <button style="border-radius: 10cm;background-color:  bisque;height: 40px;"    (click)="sortByDepartment()" >Sort by Department</button>
+  <button style="border-radius: 10cm; background-color: antiquewhite;height: 40px;"     (click)="sortByPosition()" >Sort by Position</button>
+  
+  <input style="margin: 10px;border-radius: 10cm;height: 30px;"  type="text" placeholder="Search..." [(ngModel)]="searchCriteria">
+
+
+  <!-- Add new employee form -->
+  <div class="form-container" *ngIf="showAddForm">
+    <h2 style="color: rgb(1, 26, 251);">Add Employee Details</h2>
+    <form (ngSubmit)="addEmployee()" #addForm="ngForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required><br>
+      
+      <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="newEmployee.email" name="email" required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+            <div *ngIf="email.errors?.['required']" style="color: red;">
+             Empty fields are not allowed.
+            </div>
+            <div *ngIf="email.errors?.['pattern']">
+             Invalid email format.
+          </div>
+      </div>
+
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" [(ngModel)]="newEmployee.department" name="department" required><br>
+  
+      <label for="position">Position:</label>
+      <input type="text" id="position" [(ngModel)]="newEmployee.position" name="position" required><br>
+  
+      <button type="submit" [disabled]="!addForm.valid">Add</button>
+      <button type="button" (click)="cancelAdd()">Cancel</button>
+    </form>
+  </div>
+  
+
+
+ <!-- Edit employee form -->
+<div class="form-container" *ngIf="showEditForm && selectedEmployee">
+  <h2>EDIT EMPLOYEE DETAILS</h2>
+  <form (submit)="updateEmployee()" class="add-employee-form">
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" [(ngModel)]="selectedEmployee.name" name="editName" required><br>
+
+    <label for="editEmail">Email:</label>
+    <input type="email" id="editEmail" [(ngModel)]="selectedEmployee.email" name="editEmail" required><br>
+
+    <label for="editDepartment">Department:</label>
+    <input type="text" id="editDepartment" [(ngModel)]="selectedEmployee.department" name="editDepartment" required><br>
+
+    <label for="editPosition">Position:</label>
+    <input type="text" id="editPosition" [(ngModel)]="selectedEmployee.position" name="editPosition" required><br>
+
+    <button type="submit">Save </button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
+
+
+
+<!-- Display employee list -->
+<ul class="employee-list">
+  <li *ngFor="let employee of employees">
+   <strong>{{employee.name}}</strong> - {{employee.email}}
+    <button style="margin: 5px; background-color:rgb(249, 178, 91) ;border-radius: 10cm;width: 100px;height: 40px;"   (click)="showEmployeeDetails(employee)">Details </button>
+    <button style="margin: 5px;background-color: rgb(169, 146, 254);border-radius: 10cm;width: 100px;height: 40px;"   (click)="openEditForm(employee)">Edit</button>
+    <button style="margin: 5px;background-color: rgb(145, 246, 145);border-radius: 10cm;width: 100px;height: 40px;"   (click)="confirmDeleteEmployee(employee)">Delete</button>
+  </li>
+</ul>
+
+
+
+  <!-- Display employee details -->
+  <div *ngIf="selectedEmployee" class="employee-details">
+    <h2>{{selectedEmployee.name}}</h2>
+    <p><strong>Email:</strong> {{selectedEmployee.email}}</p>
+    <p><strong>Department:</strong> {{selectedEmployee.department}}</p>
+    <p><strong>Position:</strong> {{selectedEmployee.position}}</p>
+  </div>
+</div>
+
+</body>
+

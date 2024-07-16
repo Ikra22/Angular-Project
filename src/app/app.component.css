@@ -1,0 +1,232 @@
+
+body {
+  max-width: 8000;;
+  background-image: url('D:/Angular App/IkraPathan_Angular/IkraPathan_Angular (2)/IkraPathan_Angular/Company_img.jpg'); /* Specify the path to your image */
+  background-size: cover; 
+  background-position: center; 
+  height:20cm; 
+  padding: 100; 
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #97cef8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10cm auto;
+}
+
+
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    background-color: #1500fc; /* Blue button color */
+    color: #fff;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 100cm; /* Add margin between buttons */
+
+  }
+  
+  .button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    margin-right: 0;
+  }
+  
+  .employee-list {
+    list-style-type: none;
+    padding: 0;
+    
+  }
+  
+  .employee-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: larger;
+  }
+  
+  .employee-list li:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+  }
+  
+  .employee-details {
+    margin-top: 20px;
+    background-color: #fac2e2;
+    padding: 20px;
+    border-radius: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    margin-right: 300px;
+    font-size: large;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+  }
+  
+  .form-container button.cancel {
+    background-color: #dc3545;
+    margin-left: 10px;
+
+   
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  
+  }
+
+  /* Add styles for the edit employee form */
+.form-container {
+  margin-top: 20px;
+  
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 8px 15px;
+  background-color:#007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button.cancel {
+  background-color: #ed0000;
+  margin-left: 10px;
+ 
+  
+}
+
+  /* CSS for form container */
+.form-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  
+}
+
+/* CSS for form inputs */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* CSS for form buttons */
+.form-container button {
+  padding: 10px 20px;
+  margin-right: 10px; /* Add space between buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.form-container button[type="submit"] {
+  background-color: #45a049;
+  color: white;
+  border: brown;
+  border-radius: 10px;
+  
+}
+
+.form-container button[type="submit"]:hover,
+.form-container button[type="submit"]:focus {
+  background-color: #45a049;
+}
+
+.form-container button[type="button"] {
+  background-color: #f44336;
+  color: white;
+
+  border: brown;
+  border-radius: 10px;
+}
+
+.form-container button[type="button"]:hover,
+.form-container button[type="button"]:focus {
+  background-color: #d32f2f;
+}
+
+
+
+
+
+
+
+
+
